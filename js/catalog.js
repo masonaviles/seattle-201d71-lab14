@@ -1,7 +1,7 @@
 /* global Product, Cart */
 
 'use strict';
-var itemCounter = 0;
+var itemCounter = 0
 // Set up an empty cart for use on this page.
 var cart = new Cart([]);
 
@@ -11,12 +11,11 @@ function populateForm() { // COMPLETED TO MAKE VALUES ASSOCIATE WITH THE NAME
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
   var optionElement = document.createElement('option');
-  for (var i=0; i < Product.allProducts.length; i++) {
-    // ** Mace note: this is already defined on line 13 so I'm commenting this var out
-    // var optionElement = document.createElement('option'); 
-    optionElement.textContent = Product.allProducts[i].name;
-    optionElement.value = Product.allProducts[i].name;
-    selectElement.appendChild(optionElement);
+    for (var i=0; i < Product.allProducts.length; i++) {
+      var optionElement = document.createElement('option');
+      optionElement.textContent = Product.allProducts[i].name 
+      optionElement.value = Product.allProducts[i].name
+      selectElement.appendChild(optionElement);
   }
 }
 
@@ -38,29 +37,31 @@ function handleSubmit(event) { // Last
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  var quantityId = document.getElementById('quantity');
+  var quantityId = document.getElementById('quantity')
   var selectElement = document.getElementById('items');
-  Cart.prototype.addItem(selectElement.value, quantityId.value);
+  Cart.prototype.addItem(selectElement.value, quantityId.value)
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
 
 }
 
-// ** Mace Note: we need to replace this with the .length so it shows total length and not counting, if that makes sense
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-  var itemCountID = document.getElementById('itemCount');
-  var aElement = document.createElement('a');
-  itemCounter = itemCounter + 1;
-  aElement.textContent = itemCounter;
-  itemCountID.appendChild(aElement);
+  var itemCountID = document.getElementById('itemCount')
+  var aElement = document.createElement('a')
+  itemCounter = itemCounter + 1
+  aElement.textContent = itemCounter
+  itemCountID.appendChild(aElement)
 
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  var cartID = document.getElementById('cartContents')
+  var aElement = document.createElement('a')
+
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }

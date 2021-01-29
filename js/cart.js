@@ -7,14 +7,16 @@ table.addEventListener('click', removeItemFromCart);
 var cart;
 
 function loadCart() {
-  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  cart = new Cart(cartItems);
+  var reObjectify = localStorage.getItem('cart');
+  var productsFromStorage = JSON.parse(reObjectify);
+  console.log(productsFromStorage) // This is the Array of objects we are playing with to use in the show
+  return productsFromStorage;
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
   loadCart();
-  clearCart();
+  // clearCart();
   showCart();
 }
 
@@ -32,8 +34,8 @@ function showCart() {
   var tableBody = tableHead.nextSibling;
 
   // TODO: Iterate over the items in the cart
-  console.log('cart items', cart.items);
-  console.log('cart items length', cart.items.length);
+  // console.log('cart items', cart.items);
+  // console.log('cart items length', cart.items.length);
 
   // TODO: Create a TR
   for (var i = 0; i < cart.items.length; i++){
