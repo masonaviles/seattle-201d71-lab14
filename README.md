@@ -25,9 +25,9 @@ Fill in the necessary code in the JavaScript and CSS files, but **do not modify 
 
 Your `index.html` is an order form for customers: it will have an order form for BusMall that contains the following features:
 
-  1. A dropdown menu of all BusMall products (`<select>` and `<option>` will be needed).
-  1. An input of `type="number"` to indicate the quantity to purchase.
-  1. An "Add to Cart" button to submit the order. When the order is submitted, all of the input fields should be cleared.
+  1. ~~A dropdown menu of all BusMall products (`<select>` and `<option>` will be needed).~~
+  1. ~~An input of `type="number"` to indicate the quantity to purchase.~~
+  1. ~~An "Add to Cart" button to submit the order. When the order is submitted, all of the input fields should be cleared.
   1. An animated confirmation message using CSS and JS, displayed when the order is submitted, plus a link to the shopping cart page.
   1. Appropriate instructions and styling on the page.
 

@@ -6,11 +6,21 @@ var Cart = function(items) {
   this.items = items;
 };
 
-Cart.prototype.addItem = function(product, quantity) {
+var itemArray = []
+Cart.prototype.addItem = function(product, quantity) { // Later I wanna check this out to see what it's adding
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
-};
+     var newObject = new CartItem(product,quantity)
+     
+  
+     itemArray.push(newObject) 
+      cart = new Cart(itemArray)
+     
+    };
 
 Cart.prototype.saveToLocalStorage = function() {
+  var stringObject = JSON.stringify(cart);
+  localStorage.setItem('cart', stringObject)
+  console.log("made it")
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
 };
 
