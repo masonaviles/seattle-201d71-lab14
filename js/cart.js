@@ -6,6 +6,10 @@ var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 var cart;
 
+var tableElement = document.getElementById('cart');
+var tableHead = tableElement.firstChild;
+var tableBody = tableHead.nextSibling;
+
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   cart = new Cart(cartItems);
@@ -21,16 +25,15 @@ function renderCart() {
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-  
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
   // TODO: Find the table body
-  var tableElement = document.getElementById('cart');
-  var tableHead = tableElement.firstChild;
-  var tableBody = tableHead.nextSibling;
 
   // TODO: Iterate over the items in the cart
   // console.log('cart items', cart.items);
@@ -42,11 +45,11 @@ function showCart() {
 
     var trEl = document.createElement('tr');
     tableBody.appendChild(trEl);
-    tr.textContent = 'blah';
+    trEl.textContent = 'blah';
     var tdQuantityEl = document.createElement('td');
     var tdProductEl = document.createElement('td');
-    tr.appendChild(tdQuantityEl);
-    tr.appendChild(tdProductEl);
+    trEl.appendChild(tdQuantityEl);
+    trEl.appendChild(tdProductEl);
 
     // ** Mace note: get these the correct things
     // tdQuantityEl.textContent = quantity;
