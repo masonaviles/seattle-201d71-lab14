@@ -11,13 +11,12 @@ Cart.prototype.addItem = function(product, quantity) { // Later I wanna check th
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
     for (var i = 0; i < Product.allProducts.length; i++) {
       if (items.value == Product.allProducts[i].name) {
-        var product = new CartItem(Product.allProducts[i].name, quantity);
-        this.items.push(product);
+        console.log(items.value)
+        var item = new CartItem(product, quantity);
+        this.items.push(item);
         console.log(cart);
       }
     }
-
-     
 };
 
 Cart.prototype.saveToLocalStorage = function() {

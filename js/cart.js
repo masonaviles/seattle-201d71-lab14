@@ -7,10 +7,9 @@ table.addEventListener('click', removeItemFromCart);
 var cart;
 
 function loadCart() {
-  var reObjectify = localStorage.getItem('cart');
-  var productsFromStorage = JSON.parse(reObjectify);
-  console.log(productsFromStorage) // This is the Array of objects we are playing with to use in the show
-  return productsFromStorage;
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  cart = new Cart(cartItems);
+  return cart;
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
