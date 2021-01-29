@@ -27,9 +27,30 @@ function clearCart() {
 function showCart() {
 
   // TODO: Find the table body
+  var tableElement = document.getElementById('cart');
+  var tableHead = tableElement.firstChild;
+  var tableBody = tableHead.nextSibling;
 
   // TODO: Iterate over the items in the cart
+  console.log('cart items', cart.items);
+  console.log('cart items length', cart.items.length);
+
   // TODO: Create a TR
+  for (var i = 0; i < cart.items.length; i++){
+    console.log(cart.items[i]);
+
+    var trEl = document.createElement('tr');
+    tableBody.appendChild(trEl);
+    tr.textContent = 'blah';
+    var tdQuantityEl = document.createElement('td');
+    var tdProductEl = document.createElement('td');
+    tr.appendChild(tdQuantityEl);
+    tr.appendChild(tdProductEl);
+
+    // ** Mace note: get these the correct things
+    // tdQuantityEl.textContent = quantity;
+    // tdProductEl.textContent = product;
+  }
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
