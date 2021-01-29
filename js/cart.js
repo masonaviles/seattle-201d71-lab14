@@ -19,7 +19,7 @@ function loadCart() {
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
   loadCart();
-  // clearCart();
+  clearCart();
   showCart();
 }
 
